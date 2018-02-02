@@ -10,7 +10,55 @@
   </head>
   <body>
     <article id="app">
-      
     </article>
+    <h3>history</h3>
+    <a class="api a">a.html</a>
+    <a class="api b">b.html</a>
+    <script type="text/javascript">
+    // 注册路由：监听点击事件
+      document.querySelectorAll('.api').forEach(item=>{
+        // item 相当于每个入口
+        item.addEventListener('click',(e)=>{
+          e.preventDefault();
+          let link = item.textContent;
+          /*
+          * 真实场景：打开某一个页面，同时创建历史记录。这也是注册路由要做的两件事
+          * 第一个参数：页面间传递的参数，自定义的，第二个参数：页面显示的title，第三个参数：页面的链接
+          */
+          window.history.pushState({name: 'api'}, link, link);
+        },false);
+      });
+
+      // 监听路由
+      window.addEventListener('popstate',(e)=>{
+        // console.log({
+        //   location: location.href,
+        //   state: e.state
+        // });
+      });
+    </script>
+
+    <h3>Hash</h3>
+    <a class="hash a">#a.html</a>
+    <a class="hash b">#b.html</a>
+    <script type="text/javascript">
+    // 注册路由：监听点击事件
+      document.querySelectorAll('.hash').forEach(item=>{
+        // item 相当于每个入口
+        item.addEventListener('click',(e)=>{
+          e.preventDefault();
+          let link = item.textContent;
+          location.hash = link;
+        },false);
+      });
+
+      // 监听路由
+      window.addEventListener('hashchange',(e)=>{
+        console.log({
+          location: location.href,
+          hash: location.hash
+        });
+      });
+    </script>
   </body>
 </html>
