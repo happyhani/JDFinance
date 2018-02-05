@@ -1,5 +1,5 @@
 <template lang="html">
-    <div :class="[btnClass, cname]">
+    <div :class="[btnClass]">
         <slot/>
     </div>
 </template>
