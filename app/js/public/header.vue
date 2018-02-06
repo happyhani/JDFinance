@@ -3,8 +3,8 @@
     <span :class="$style.left">
       <!-- 如果不是spa页面可以使用a标签，在vue中使用router-link触发路由 -->
       <em>注册</em>&nbsp;|&nbsp;<em>登录</em>
-
     </span>
+
     <!-- btn组件 插槽 -->
     <btn :class="$style.btnDownLoad">APP下载</btn>
   </div>
@@ -25,6 +25,7 @@ export default {
   top: 0;
   left: 0;
   right: 0; /* 这里的目的是 width是100%  */
+  z-index: 100;
   height: 100px;
   line-height: 100px;
   color: #666;

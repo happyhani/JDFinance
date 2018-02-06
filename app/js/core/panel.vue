@@ -1,7 +1,8 @@
 <template lang="html">
-    <section :class="[panelClass, cname ]">
+    <section :class="[panelClass, cname]">
         <h4>-{{ title }}-</h4>
-         <slot/> <!-- 插槽，是用的时候使用标签嵌套进去，就可以实现内部的内容 -->
+        <!-- 插槽，是用的时候使用标签嵌套进去，就可以实现内部的内容 -->
+         <slot/>
     </section>
 </template>
 

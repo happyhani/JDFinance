@@ -29,6 +29,7 @@ module.exports = env => {
       contentBase: './dist',
       hot: true,
       compress: true,
+      // host: '192.168.155.1',
       port: 9000,
       clientLogLevel: "none",
       quiet: true

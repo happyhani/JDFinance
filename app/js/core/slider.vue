@@ -1,13 +1,14 @@
 <template lang="html">
-    <section :class="[cname]">
+    <section :class="cname">
         <swiper :options="options" :not-next-tick="options.notNextTick">
             <swiper-slide v-for="item in items" :key="item.href">
-              <!-- 触发路由的时候使用这个 -->
+                <!-- 触发路由的时候使用这个 -->
                 <router-link :to="{ name: item.href }">
                     <img :src="item.src" alt="">
                 </router-link>
             </swiper-slide>
-            <div class="swiper-pagination" v-if="options.pagination">指示器，这样可配置，判断一下</div>
+            <!-- 指示器，这样可配置，判断一下 -->
+            <div class="swiper-pagination" v-if="options.pagination" slot="pagination"></div>
         </swiper>
     </section>
 </template>
@@ -20,6 +21,10 @@ export default {
         swiperSlide,
     },
     props: {
+        cname: {
+            type: String,
+            default: "",
+        },
         options: {
             type: Object,
             default() {
