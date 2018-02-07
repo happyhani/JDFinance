@@ -42,7 +42,7 @@ export default {
                 src: "//img12.360buyimg.com/jrpmobile/jfs/t17506/112/423288292/45039/ba638e28/5a72e986N9a577e50.jpg?width=335&height=421",
             }],
             options: {
-                slidesPerView: 2.3, // 一屏有几张图片
+                slidesPerView: 2.3, // 一屏显示几张图片
                 spaceBetween: 30,
                 freeMode: true,
             },
