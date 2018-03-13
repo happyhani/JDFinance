@@ -1,19 +1,11 @@
 <template lang="html">
-    <Panel title="理财精选" :class="$style.panel">
+    <Panel title="精选推荐" :class="$style.panel">
         <section :class="$style.content">
             <dl :class="$style.item" v-for="item in items" :key="item.title">
                 <dt>{{ item.title }}<span>{{ item.type }}</span></dt>
                 <dd>{{ item.rate }}</dd>
                 <dd>{{ item.details }}</dd>
             </dl>
-            <!-- 自己的： -->
-            <!-- <div :class="$style.item" v-for="item in items" :key="item.title">
-              <router-link :to="{ name: 'home' }">
-                   <h4>{{ item.title }}<span>{{ item.type }}</span></h4>
-                   <p :class="$style.red">{{ item.rate }}</p>
-                   <p :class="$style.grey">{{ item.details }}</p>
-              </router-link>
-            </div> -->
         </section>
     </Panel>
 </template>
@@ -28,21 +20,21 @@ export default {
         return {
             items: [{
                 title: "定期理财",
-                type: "理财首选",
-                rate: "5.60%",
-                details: "历史年化回报率",
+                type: "90天可质押",
+                rate: "5.50%",
+                details: "历史年化结算利率",
             },
             {
-                title: "小白理财",
+                title: "固收理财",
                 type: "理财首选",
-                rate: "4.22%",
-                details: "7日年化收益率",
+                rate: "5.80%",
+                details: "综合年化收益率",
             },
             {
-                title: "月月盈",
-                type: "养老保障",
-                rate: "5%",
-                details: "7日年化收益率",
+                title: "基智账户",
+                type: "组合投资",
+                rate: "8%-10%",
+                details: "止盈年化收益率",
             },
             {
                 title: "小白基金",
@@ -56,27 +48,26 @@ export default {
 </script>
 
 <style lang="scss" module>
-@import '../../css/element.scss';
+@import "../../css/element.scss";
 .panel {
   .content {
     @include list(row);
     justify-content: space-around;
     box-sizing: border-box;
-    &:after {
-      content: '';
+    &:after { /* 中间贯穿的横线 */
+      content: "";
       display: block;
       width: 100%;
       height: 0px;
       box-sizing: border-box;
       border-bottom: 1px solid #ddd;
-      // margin-top: -208px;
       position: relative;
       top: -208px;
     }
     .item {
       position: relative;
       width: 50%;
-      padding: 34px 16px;
+      padding: 34px 20px;
       box-sizing: border-box;
       &:after {
         content: "";
@@ -106,7 +97,7 @@ export default {
           border: 1px solid #ff5155;
           font-size: 22px;
           color: #ff5155;
-          vertical-align: 1px;
+          vertical-align: 1px; /* 文字在边框内垂直居中 */
         }
       }
       dd {
